@@ -1,0 +1,39 @@
+#include <iostream>
+#include <string>
+#pragma warning(disable:4996)
+using namespace std;
+
+int count1;
+
+void solve(char*str,int n);
+void solve(char*str);
+int main()
+{
+	char temp[20] = "Hello World.";
+	solve(temp);
+	solve(temp,4);
+	solve(temp, 5);
+	return 0;
+}
+
+void solve(char* str, int n)
+{
+	if (n==0)
+	{
+		solve(str);
+	}
+	else
+	{
+		count1++;
+		for (int i=0;i<count1;i++)
+		{
+			cout <<str<<endl ;
+		}
+	}
+}
+void solve(char* str)
+{
+	count1++;
+	cout << str << endl;
+	
+}
