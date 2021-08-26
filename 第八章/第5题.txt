@@ -1,0 +1,27 @@
+#include <iostream>
+#pragma warning(disable:4996)
+using namespace std;
+
+template <typename T>
+T max5(T a[]);
+
+int main()
+{
+	int a[5] = { 10,56,99,456,12 };
+	double b[5] = {112.3,59.6,66.58,1.26,59.689};
+	cout << max5(a)<<endl;
+	cout << max5(b) << endl;
+	return 0;
+}
+
+template <typename T>
+T max5(T a[])
+{
+	T m=a[0];
+	for (int i=0;i<5;i++)
+	{
+		if (m < a[i])
+			m = a[i];
+	}
+	return m;
+}
