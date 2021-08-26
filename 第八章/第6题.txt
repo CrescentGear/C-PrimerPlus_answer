@@ -1,0 +1,49 @@
+#include <iostream>
+#pragma warning(disable:4996)
+using namespace std;
+
+template <typename T>
+T maxn(T a[], int n);
+
+template<>
+const char* maxn<const char*>(const char* a[], int length);
+
+int main()
+{
+	int a[6] = { 777,10,56,99,456,12 };
+	double b[4] = {59.6,66.58,1.26,59.689};
+	const char* c[5] = {"abc","hello world","568","good morning","let it go"};
+	cout << maxn(a,6)<<endl;
+	cout << maxn(b,4) << endl;
+	cout << maxn(c,5) << endl;
+	return 0;
+}
+
+template <typename T>
+T maxn(T a[], int n)
+{
+	T m = a[0];
+	for (int i = 0; i < n; i++)
+	{
+		if (m < a[i])
+			m = a[i];
+	}
+	return m;
+}
+
+const char* maxn<const char*>(const char* a[], int length)
+{
+	const char* max;
+	int leng;
+	leng = strlen(a[0]);
+	max = a[0];
+	for (int i = 0; i < length; i++)
+	{
+		if (leng < strlen(a[i]))
+		{
+			leng = strlen(a[i]);
+			max = a[i];
+		}
+	}
+	return max;
+}
