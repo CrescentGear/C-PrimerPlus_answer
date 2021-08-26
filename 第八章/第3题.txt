@@ -1,0 +1,35 @@
+#include <iostream>
+#include <string>
+#pragma warning(disable:4996)
+using namespace std;
+
+void up(string& a);
+
+int main()
+{
+	cout << "Enter a string (q to quit):";
+	string a;
+	getline(cin, a);
+	while (1)
+	{
+		if (a[0] == 'q' ||a[0]=='Q')
+		{ 
+			cout << "Bye.";
+			break;
+		}
+		up(a);
+		cout <<a<< endl;
+		cout << "Next string (q to quit):";
+		getline(cin, a);
+	}
+}
+
+void up(string& a)
+{
+	int i=0;
+	while(a[i])
+	{ 
+		a[i]=(toupper(a[i]));
+		i++;
+	}
+}
