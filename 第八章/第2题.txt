@@ -1,0 +1,44 @@
+#include <iostream>
+#include <string>
+#pragma warning(disable:4996)
+using namespace std;
+
+struct CandyBar
+{
+	char name[100];
+	double weight;
+	int energy;
+};
+
+void fill(CandyBar & C,const char* name="Millennium Munch",
+	const double weight=2.85,
+	const int energy=350);
+void show(const CandyBar & C);
+
+int main()
+{
+	CandyBar C ;
+	fill(C);
+	show(C);
+	cout << endl;
+	fill(C, "abc", 4.9, 220);
+	show(C);
+	return 0;
+	
+}
+
+void fill(CandyBar& C, const char* name,
+	const double weight,
+	const int energy)
+{
+	strcpy(C.name,name);
+	C.weight = weight;
+	C.energy = energy;
+}
+
+void show(const CandyBar& C)
+{
+	cout << "name:" << C.name << endl;
+	cout << "weight:" << C.weight << endl;
+	cout << "energy:" << C.energy << endl;
+}
