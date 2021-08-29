@@ -1,0 +1,49 @@
+#pragma warning (disable:4996)
+#include <iostream>
+#include <string>
+#include <new>
+
+using namespace std;
+
+struct chaff
+{
+	char dross[20];
+	int slag;
+};
+
+char b[50];
+
+int main()
+{
+	int i=0;
+	cout <<(void*) b<<endl;
+	chaff *a1 = new (b) chaff[2];
+	chaff *a2 = new chaff[2];
+	for (i=0;i<3;i++)
+	{
+		int n;
+		char name[20];
+		cout << "输入字符串：";
+		cin >> name;
+		cout << "输入数字:";
+		cin >> n;
+		strcpy(a1[i].dross, name);
+		a1[i].slag = n;
+		cout << "输入字符串：";
+		cin >> name;
+		cout << "输入数字.";
+		cin >> n;
+		strcpy(a2[i].dross, name);
+		a2[i].slag = n;
+
+	}
+	cout << a1<<"\t";
+	cout << a2<<endl;
+	for(i=0;i<3;i++)
+	{ 
+		cout << a1[i].dross<<"\t"<<a1[i].slag<<"\t"<<&a1[i]<<endl<<endl;
+		cout << a2[i].dross << "\t" << a2[i].slag<<"\t"<<&a2[i]<<endl<<endl;
+	}
+		return 0;
+}
+
