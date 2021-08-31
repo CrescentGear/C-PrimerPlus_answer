@@ -13,15 +13,15 @@ int main()
 		int result = 1;
 		if (i % 2 == 0)
 		{
-			cout << "此为模式2：\n";
+			cout << "姝や负妯″紡2锛歕n";
 			result = setgolf(in[i]);
 		}
 		else
 		{
-			cout << "此为模式1：\n请输入姓名：";
+			cout << "姝や负妯″紡1锛歕n璇疯緭鍏ュ鍚嶏細";
 			cin.get(name, Len);
 			cin.ignore(Len, '\n');
-			cout << "请输入hc:";
+			cout << "璇疯緭鍏c:";
 			cin >> hc;
 			cin.get();
 			setgolf(in[i], name, hc);
