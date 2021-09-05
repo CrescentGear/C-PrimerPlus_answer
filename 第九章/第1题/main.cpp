@@ -20,7 +20,8 @@ int main()
 		{
 			cout << "此为模式1：\n请输入姓名：";
 			cin.get(name, Len);
-			cin.ignore(Len, '\n');
+			cin.clear();
+			cin.ignore((numeric_limits<std::streamsize>::max)(), '\n');
 			cout << "请输入hc:";
 			cin >> hc;
 			cin.get();

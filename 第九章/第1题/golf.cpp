@@ -8,6 +8,7 @@ using namespace std;
 void setgolf(golf& g, const char* name, int hc)
 {
 	strcpy(g.fullname, name);
+	m_fullname[39] = '\0';
 	g.handicap = hc;
 }
 
@@ -17,7 +18,8 @@ int setgolf(golf& g)
 	int hc;
 	cout << "ÇëÊäÈëÐÕÃû:";
 	cin.get(name, Len);
-	cin.ignore(Len, '\n');
+	cin.clear();
+	cin.ignore((numeric_limits<std::streamsize>::max)(), '\n');
 	cout << "ÇëÊäÈëhc£º";
 	cin >> hc;
 	cin.get();
